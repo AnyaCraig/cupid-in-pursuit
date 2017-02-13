@@ -1,0 +1,124 @@
+
+/* BOX-SIZING: BORDER-BOX */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* CLEARFIX */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+* {
+  cursor: none;
+}
+
+body {
+	background-image: url("./images/cip_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	margin: 0;
+	padding: 0;
+  overflow: hidden;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+}
+
+
+h1 {
+	text-align: center;
+	margin-top: 75px;
+}
+
+h1 span {
+	transition: 0.2s ease-in-out;
+  font-family: "Barrio", sans-serif;
+  font-size: 60px;
+  color: #bc0000;
+  text-shadow: 3px 3px 0 #ff497a;
+}
+
+#cupid {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: 150;
+  left: 150;
+  background-image: url("./images/cip_cupid_left.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: hoverBounce;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+#heart {
+  width: 40px;
+  height: 60px;
+  background-image: url("./images/cip_heart.png");
+  position: absolute;
+  top: 150;
+  left: 150;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: .2s transform ease-in-out;
+}
+
+@keyframes hoverBounce {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+}
+
+h1 span {
+	display: inline-block;
+	transition: 0.5s ease-in-out;
+}
+
+.spacer {
+	width: 15px;
+}
+
+.up {
+	transform: translateY(-20px);
+}
+
+.caughtup {
+	animation-name: pulsing;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	transition: .5s all ease-in-out;
+	transform: scale(2);
+}
+
+@keyframes pulsing {
+	0%, 100%{
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(2);
+	}
+}
